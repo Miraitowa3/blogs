@@ -19,7 +19,7 @@ jobs:
     - name: install
       run: pnpm install
     - name: build
-      run:  pnpm build
+      run:  pnpm build-only
     - name: copy file via ssh password
       uses: appleboy/scp-action@v0.1.7
       with:
