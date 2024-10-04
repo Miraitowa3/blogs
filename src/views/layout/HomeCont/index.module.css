@@ -1,0 +1,45 @@
+.cont {
+  background: linear-gradient(
+    90deg,
+    rgba(247, 149, 51, 0.1),
+    rgba(243, 112, 85, 0.1) 15%,
+    rgba(239, 78, 123, 0.1) 30%,
+    rgba(161, 102, 171, 0.1) 44%,
+    rgba(80, 115, 184, 0.1) 58%,
+    rgba(16, 152, 173, 0.1) 72%,
+    rgba(7, 179, 155, 0.1) 86%,
+    rgba(109, 186, 130, 0.1)
+  );
+}
+
+img {
+  transition: transform 0.3s ease-in-out;
+}
+.article-img {
+  overflow: hidden;
+}
+
+.card .article-img:hover img {
+  transform: scale(1.1);
+}
+.article-content {
+  line-height: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.rollScreen-container {
+  animation: move 5s ease-in-out infinite;
+}
+.rollScreen-container:hover {
+  animation-play-state: paused;
+}
+@keyframes move {
+  0% {
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,29 @@
+.nav-line-item {
+  width: 0;
+  transition: all 0.3s ease-in-out; /* 设置宽度变化的过渡效果 */
+}
+.nav-dropdown {
+  opacity: 0;
+  display: none;
+  box-shadow: 0 5px 20px -4px rgba(0, 0, 0, 0.5);
+}
+
+.nav-item:hover > .nav-line-item {
+  width: 100%;
+}
+.nav-item:hover > .nav-dropdown {
+  display: block;
+  animation: sss 0.3s ease-in-out forwards;
+}
+
+@keyframes sss {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0px);
+  }
+}

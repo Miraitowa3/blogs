@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'cccc';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/src/assets/fonts/37.woff2) format('woff2');
+  }
+}
+@layer components {
+  .card {
+    border-radius: theme('borderRadius.lg');
+    box-shadow: 0 4px 8px 6px rgba(7, 17, 27, 0.06);
+  }
+}
