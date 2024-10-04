@@ -1,0 +1,35 @@
+name: deploy-blog
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:  # 手动构建
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: git clone
+      uses: actions/checkout@v4 #冲分支拉去代码
+    - name: install nodejs
+      uses: actions/setup-node@v4  
+      with:
+        node-version: "20.10.0"
+    - name: install pnpm
+      run: npm i -g pnpm
+
+    - name: install
+      run: pnpm install
+    - name: build
+      run:  pnpm build
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{secrets.REMOTE_USERNAME}}
+        password: ${{secrets.REMOTE_PASSWORD}}
+        port: ${{secrets.REMOTE_PORT}}
+        source: ${{ secrets.REMOTE_SOURCE }}
+        target: ${{ secrets.REMOTE_TARGET }}
+    
+    
+  
+       
