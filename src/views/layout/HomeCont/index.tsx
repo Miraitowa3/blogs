@@ -212,7 +212,7 @@ export default defineComponent({
                   'mt-5',
                   'card',
                   'text-white',
-                  'bg-[linear-gradient(270deg,rgb(169,249,158)10%,rgb(70,173,213)100%)]'
+                  'bg-[linear-gradient(270deg,rgb(169,249,158),rgb(70,173,213))]'
                 ]}
               >
                 <span class={['text-sm', 'font-bold']}>速览</span>
@@ -240,7 +240,7 @@ export default defineComponent({
                   'mt-5',
                   'card',
                   'text-white',
-                  'bg-[linear-gradient(270deg,rgb(0,242,254)10%,rgb(142,45,226)100%)]'
+                  'bg-[linear-gradient(270deg,rgb(0,242,254),rgb(142,45,226))]'
                 ]}
               >
                 <span class={['text-sm', 'font-bold']}>速览</span>
