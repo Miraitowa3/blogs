@@ -43,3 +43,27 @@ img {
     transform: translateY(-50%);
   }
 }
+.next {
+  animation: next 1.5s ease infinite;
+}
+
+@keyframes next {
+  0% {
+    bottom: 16px;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+  }
+
+  50% {
+    bottom: 32px;
+    opacity: 1;
+    -webkit-filter: none;
+    filter: none;
+  }
+
+  to {
+    bottom: 16px;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+  }
+}
