@@ -133,8 +133,8 @@ export default defineComponent({
             ></i>
           </div>
         </div>
-        <div class={['flex', 'md:max-w-[1800px]', 'ml-auto', 'mr-auto', 'pl-1', 'pr-1', 'text-[#4c4948]']}>
-          <div class={['cont-l', 'max-md:hidden', 'ml-[8%]', , 'mr-7', 'md:w-[18%]']}>
+        <div class={['flex', 'lg:max-w-[1800px]', 'ml-auto', 'mr-auto', 'pl-1', 'pr-1', 'text-[#4c4948]']}>
+          <div class={['cont-l', 'max-lg:hidden', 'ml-[8%]', , 'mr-7', 'lg:w-[18%]']}>
             <div class={['sticky', '-top-0', 'p-2']}>
               <div
                 class={[
@@ -270,116 +270,85 @@ export default defineComponent({
               <div class={['h-8']}></div>
             </div>
           </div>
-          <div class={['cont-c', 'md:w-[50%]', 'pl-2', 'pr-2', 'pt-2', 'pr-2']}>
+          <div class={['cont-c', 'lg:w-[50%]', 'pl-2', 'pr-2', 'pt-2', 'pr-2']}>
             <div class={['p-2.5', 'rounded-lg', 'bg-white', 'mt-2.5', 'card']}>
               <div class={['text-center', 'mt-2.5']}>
                 欢迎来自于<strong class={['text-[rgb(94,166,229)]']}>浙江省-杭州市</strong>的小伙伴🎉
               </div>
             </div>
 
-            {itemList.map((item, index) =>
-              item % 2 === 0 ? (
+            {itemList.map((item, index) => (
+              <div
+                class={[
+                  'article',
+                  'lg:h-[280px]',
+                  'rounded-lg',
+                  'bg-white',
+                  'mt-7',
+                  'lg:flex',
+                  'card',
+                  'overflow-hidden'
+                ]}
+              >
+                <div class={['lg:w-[45%]', 'max-md:w-[100%]','lg:hidden', styles['article-img']]} >
+                  <img
+                    class={['lg:rounded-l-lg', 'max-md:rounded-t-lg']}
+                    src="https://static.renzs.top/articles/dbd1966cc0f2e108423c7b60d063b904.jpg"
+                    alt=""
+                    style={{ width: '100%', height: '100%' }}
+                  />
+                </div>
+               {
+                index % 2 !== 0?  <div class={['lg:w-[45%]','max-lg:hidden' ,'max-md:w-[100%]', styles['article-img']]} >
+                  <img
+                    class={['lg:rounded-l-lg', 'max-md:rounded-t-lg']}
+                    src="https://static.renzs.top/articles/dbd1966cc0f2e108423c7b60d063b904.jpg"
+                    alt=""
+                    style={{ width: '100%', height: '100%' }}
+                  />
+                </div>:''
+               }
                 <div
-                  class={[
-                    'article',
-                    'lg:h-[280px]',
-                    'rounded-lg',
-                    'bg-white',
-                    'mt-7',
-                    'lg:flex',
-                    'card',
-                    'overflow-hidden'
-                  ]}
+                  class={['article-wrapper','max-lg:pl-5','max-lg:pr-5','max-lg:pt-5','max-lg:pb-7' ,'max-lg:w-full','xl:w-[55%]', 'xl:pl-10', 'lg:pr-10', 'flex', 'justify-center', 'flex-col']}
                 >
-                  <div class={['lg:w-[45%]','max-md:w-[100%]', styles['article-img']]}>
-                    <img
-                      class={['lg:rounded-l-lg','max-md:rounded-t-lg']}
-                      src="https://static.renzs.top/articles/dbd1966cc0f2e108423c7b60d063b904.jpg"
-                      alt=""
-                      style={{ width: '100%', height: '100%' }}
-                    />
+                  <div>
+                    <span class={['lg:text-[22px]', 'font-bold']}>网站的更新日志</span>
+                  </div>
+
+                  <div class={['article-info', 'text-[#858585]', 'leading-loose', 'mt-1.5', 'mb-1.5']}>
+                    <span>网站的更新日志</span>
                   </div>
                   <div
-                    class={['article-wrapper', 'w-[55%]', 'lg:pl-10', 'lg:pr-10', 'flex', 'justify-center', 'flex-col']}
+                    class={[
+                      styles['article-content'],
+                      'lg:h-[84px]',
+                      'lg:leading-[28px]',
+                      'text-sm',
+                      'overflow-hidden'
+                    ]}
                   >
-                    <div>
-                      <span class={['lg:text-[22px]', 'font-bold']}>网站的更新日志</span>
-                    </div>
-
-                    <div class={['article-info', 'text-[#858585]', 'leading-loose', 'mt-1.5', 'mb-1.5']}>
-                      <span>网站的更新日志</span>
-                    </div>
-                    <div
-                      class={[
-                        styles['article-content'],
-                        'lg:h-[84px]',
-                        'lg:leading-[28px]',
-                        'text-sm',
-                        'overflow-hidden'
-                      ]}
-                    >
-                      更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
-                      页面footer添加自定更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
-                      页面footer添加自定更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
-                      页面footer添加自定更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
-                      页面footer添加自定更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
-                      页面footer添加自定
-                    </div>
+                    更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
+                    页面footer添加自定更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
+                    页面footer添加自定更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
+                    页面footer添加自定更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
+                    页面footer添加自定更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
+                    页面footer添加自定
                   </div>
                 </div>
-              ) : (
-                <div
-                  class={[
-                    'article',
-                    'lg:h-[280px]',
-                    'rounded-lg',
-                    'bg-white',
-                    'mt-7',
-                    'lg:flex',
-                    'card',
-                    'overflow-hidden'
-                  ]}
-                >
-                  <div
-                    class={['article-wrapper', 'w-[55%]', 'lg:pl-10', 'lg:pr-10', 'flex', 'justify-center', 'flex-col']}
-                  >
-                    <div>
-                      <span class={['lg:text-[22px]', 'font-bold']}>网站的更新日志</span>
-                    </div>
-
-                    <div class={['article-info', 'text-[#858585]', 'leading-loose', 'mt-1.5', 'mb-1.5']}>
-                      <span>网站的更新日志</span>
-                    </div>
-                    <div
-                      class={[
-                        styles['article-content'],
-                        'lg:h-[84px]',
-                        'lg:leading-[28px]',
-                        'text-sm',
-                        'overflow-hidden'
-                      ]}
-                    >
-                      更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
-                      页面footer添加自定更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
-                      页面footer添加自定更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
-                      页面footer添加自定更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
-                      页面footer添加自定更新记录2024年5月19日 网站正式开始运营 2024年5月26日 ==功能更新==
-                      页面footer添加自定
-                    </div>
-                  </div>
-                  <div class={['lg:w-[45%]', styles['article-img']]}>
-                    <img
-                      class={['rounded-r-lg']}
-                      src="https://static.renzs.top/articles/dbd1966cc0f2e108423c7b60d063b904.jpg"
-                      alt=""
-                      style={{ width: '100%', height: '100%' }}
-                    />
-                  </div>
-                </div>
-              )
-            )}
+                {
+                index % 2 === 0?  <div class={['lg:w-[45%]', 'max-lg:w-[100%]','max-lg:hidden', styles['article-img']]} >
+                  <img
+                    class={['lg:rounded-r-lg',]}
+                    src="https://static.renzs.top/articles/dbd1966cc0f2e108423c7b60d063b904.jpg"
+                    alt=""
+                    style={{ width: '100%', height: '100%' }}
+                  />
+                </div>:''
+               }
+              </div>
+            ))}
           </div>
-          <div class={['cont-r', 'max-md:hidden', 'md:w-[20%]']}>
+          <div class={['cont-r', 'max-lg:hidden', 'lg:w-[20%]']}>
             <div class={['sticky', '-top-0', 'ml-7']}>
               <div class={['p-2']}>
                 <div
