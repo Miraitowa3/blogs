@@ -6,8 +6,8 @@ export default defineComponent({
   name: 'Viewer',
 
   setup() {
-    let data = localStorage.getItem('content');
-    let theme = localStorage.getItem('theme');
+    let data = localStorage.getItem('content') ||'';
+    let theme = localStorage.getItem('theme') || 'light';
 
 
     onMounted(async () => {

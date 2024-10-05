@@ -25,6 +25,23 @@ import image from 'bytemd-plugin-image'
 
 import changecodeTheme from 'bytemd-plugin-highlight'
 import changeTheme from 'bytemd-plugin-theme'
+//这个插件 把 `juejin-markdown-themes` 中的主题集中起来并提供切换功能。
+//bytemd-plugin-theme插件实现可以参考https://juejin.cn/post/7410224960298336306?searchId=20241002112321A6BBD410FEDE061CB732
+//引入bytemd-plugin-theme 这个插件，就不需要 引入'juejin-markdown-themes/dist/juejin.min.css' 样式了。
+//下面是切换主题的原理
+//  let css = await import('juejin-markdown-themes/dist/channing-cyan')   //channing-cyan yu  smartblue scrolls-light fancy geek-black healer-readable jzman lilsnake orange
+
+//   let markdownThemeStyleElement = document.querySelector('#markdownTheme')
+//   if (markdownThemeStyleElement) {
+//     markdownThemeStyleElement.innerHTML = css.default
+//   } else {
+//     // // ('创建style标签')
+//     markdownThemeStyleElement = document.createElement('style')
+//     markdownThemeStyleElement.id = 'markdownTheme'
+//     markdownThemeStyleElement.innerHTML = css.default
+//     document.head.appendChild(markdownThemeStyleElement)
+
+//   }
 // import changeTheme from '../../plugins/byteMD/changeTheme'
 let theme = ref('')
 const plugins = [

@@ -1,41 +1,53 @@
 <template>
   <div class="view">
+    <header class="h-[400px] bg-black">
 
-    <div :class="[
+    </header>
+    <main class="content lg:w-[98%]  lg:max-w-[1300px] max-lg:w-full ml-auto mr-auto pl-1 pr-1 flex">
+      <div class="w-full p-2  flex-[9]">
+        <div :class="[
 
 
-      'w-[750px]',
-      'bg-white',
-      'pt-[30px]',
-      'pt-[30px]',
-      'pl-[40px]',
-      'pr-[40px]',
-      'ml-auto',
-      'mr-auto'
-    ]">
-      <Viewer :value="data" :plugins="plugins"></Viewer>
+          'bg-white',
+          'rounded-xl',
+          'pl-10',
+          'pr-10',
+          'pt-[50px]',
+          'pb-[50px]',
+          'viewer',
+          'max-lg:w-[100%]',
 
-    </div>
-    <div class="fixed right-16 top-14 w-80 rounded-lg mb-5 bg-white h-4/5 overflow-y-auto">
-      <div class="mulu-top ml-5 mr-5 h-14 leading-[56px] text-base 	border-[#e4e6eb] border-solid border-b-[1px]">
-        目录
+        ]">
+          <Viewer :value="data" :plugins="plugins"></Viewer>
+
+        </div>
       </div>
-      <ul class="mulu-content   flex flex-col mt-3 relative" @click="changeActive">
-        <li class="absolute top-0 left-0 w-[3px] h-[14px] bg-[#1E80FF] "
-          :style="{ 'top': cur * 36 + 11 + 'px', 'transition': 'all 0.3s ease' }"></li>
-        <li v-for="(item, $index) in mulu" class="mulu-item  h-9 fl"
-          :style="{ 'padding-left': (item.level - minLevel + 1) * 16 + 'px' }"><a :index="$index"
-            :href="'#head-' + $index"
-            :class="['block', 'pl-2', 'h-full', ' leading-9', 'text-[#515767]', 'text-sm]', cur === $index ? 'active' : '']">{{ item.text }}</a>
-        </li>
-      </ul>
-    </div>
+
+      <div class="flex-[4] rounded-lg mb-5 bg-white h-4/5 overflow-y-auto m-2 max-lg:hidden top-0 sticky max-w-[350px]">
+        <div class="w-full p-2 ">
+          <div class="mulu-top ml-5 mr-5 h-14 leading-[56px] text-base 	border-[#e4e6eb] border-solid border-b-[1px]">
+            目录
+          </div>
+          <ul class="mulu-content   flex flex-col mt-3 relative" @click="changeActive">
+            <li class="absolute top-0 left-0 w-[3px] h-[14px] bg-[#1E80FF] "
+              :style="{ 'top': cur * 36 + 11 + 'px', 'transition': 'all 0.3s ease' }"></li>
+            <li v-for="(item, $index) in mulu" class="mulu-item  h-9 fl"
+              :style="{ 'padding-left': (item.level - minLevel + 1) * 16 + 'px' }"><a :index="$index"
+                :href="'#head-' + $index"
+                :class="['block', 'pl-2', 'h-full', ' leading-9', 'text-[#515767]', 'text-sm]', cur === $index ? 'active' : '']">{{ item.text }}</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </main>
   </div>
 </template>
 <script setup lang="ts">
 import { watch, nextTick, watchEffect, ref, onMounted } from "vue";
 import 'bytemd/dist/index.css';
 import { getProcessor } from 'bytemd'
+
 
 import pluginGfmZhHans from "@bytemd/plugin-gfm/locales/zh_Hans.json"
 import { Viewer } from "@bytemd/vue-next";
@@ -77,7 +89,7 @@ const changeActive = function (e: MouseEvent) {
   }
 
 }
-const stringifyHeading = function (node) {
+const stringifyHeading = function (node: any) {
 
   let stack = Array.isArray(node) ? node : [node]
   let result = null
@@ -97,21 +109,7 @@ const stringifyHeading = function (node) {
   return result
 
 }
-function debounce(func, delay) {
-  let timeout;
 
-  return function (...args) {
-    const context = this;
-
-    // 清除之前的定时器
-    clearTimeout(timeout);
-
-    // 设置新的定时器
-    timeout = setTimeout(() => {
-      func.apply(context, args);
-    }, delay);
-  };
-}
 onMounted(() => {
 
 
@@ -122,7 +120,7 @@ onMounted(() => {
     nodes?.forEach((node, index) => {
       if (node.nodeName[0] === 'H') {
 
-        let top = (node as HTMLElement).offsetTop - this.scrollTop
+        let top = (node as HTMLElement).offsetTop - document.querySelector('.view')!.scrollTop
         if (top < 120) {
           cur.value = index
         }
@@ -142,9 +140,11 @@ watchEffect(() => {
   getProcessor({
     plugins: [
       {
-        rehype: (p) => p.use(() => (tree) => {
+        rehype: (p) => p.use(() => (tree: any) => {
           let items: any[] = [];
-          tree.children.filter(v => v.type === 'element').forEach((node) => {
+          tree.children.filter((v: any) => v.type === 'element').forEach((node: any) => {
+
+
             if (node.tagName[0] === 'h' && !!node.children.length) {
               const i = Number(node.tagName[1])
               minLevel.value = Math.min(minLevel.value, i)
@@ -205,8 +205,17 @@ const plugins = [
   color: #1E80FF;
 }
 
+.viewer {
+  box-shadow: rgba(7, 17, 27, 0.06) 0px 4px 8px 6px;
+}
+
 .view {
   height: 100%;
   overflow-y: auto;
+}
+
+.view::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari 隐藏滚动条 */
 }
 </style>
