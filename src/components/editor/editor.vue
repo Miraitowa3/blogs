@@ -33,11 +33,11 @@ const plugins = [
   image(),
   // changeTheme(),
   // hightlight(), //引入代码高亮样式 这是默认样式
-  // changeTheme({
-  //   cb: val => {
-  //     theme.value = val.theme
-  //   }
-  // }),//引入代码高亮样式 这是主题样式
+  changeTheme({
+    cb: val => {
+      theme.value = val.theme
+    }
+  }),//引入代码高亮样式 这是主题样式
   changecodeTheme(),
   gemoji(),
 

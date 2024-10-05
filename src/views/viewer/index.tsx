@@ -27,19 +27,7 @@ export default defineComponent({
     return () => (
       <div class={[s.cont, 'h-full',]}>
         <div
-        class={[
-         s.viewer,
-          'h-full',
-          'overflow-auto',
-          'w-[900px]',
-          'bg-white',
-          'pt-[30px]',
-          'pt-[30px]',
-          'pl-[40px]',
-          'pr-[40px]',
-          'ml-auto',
-          'mr-auto'
-        ]}
+        class={['overflow-hidden', 'h-full']}
       >
         <MyViewer data={data} theme={theme}></MyViewer>
       </div>
