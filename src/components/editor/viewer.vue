@@ -4,7 +4,7 @@
     <div :class="[
 
 
-      'w-[900px]',
+      'w-[750px]',
       'bg-white',
       'pt-[30px]',
       'pt-[30px]',
