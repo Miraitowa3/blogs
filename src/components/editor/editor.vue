@@ -86,4 +86,10 @@ const handleSave = () => {
 :deep(.bytemd) {
   height: 100vh !important
 }
+
+editor {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
 </style>

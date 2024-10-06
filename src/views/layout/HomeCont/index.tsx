@@ -290,18 +290,18 @@ export default defineComponent({
                   'overflow-hidden'
                 ]}
               >
-                <div class={['lg:w-[45%]', 'max-md:w-[100%]','lg:hidden', styles['article-img']]} >
+                <div class={['lg:w-[45%]', 'max-lg:w-[100%]','lg:hidden', styles['article-img']]} >
                   <img
-                    class={['lg:rounded-l-lg', 'max-md:rounded-t-lg']}
+                    class={['lg:rounded-l-lg', 'max-lg:rounded-t-lg']}
                     src="https://static.renzs.top/articles/dbd1966cc0f2e108423c7b60d063b904.jpg"
                     alt=""
                     style={{ width: '100%', height: '100%' }}
                   />
                 </div>
                {
-                index % 2 !== 0?  <div class={['lg:w-[45%]','max-lg:hidden' ,'max-md:w-[100%]', styles['article-img']]} >
+                index % 2 !== 0?  <div class={['lg:w-[45%]','max-lg:hidden' ,'max-lg:w-[100%]', styles['article-img']]} >
                   <img
-                    class={['lg:rounded-l-lg', 'max-md:rounded-t-lg']}
+                    class={['lg:rounded-l-lg', 'max-lg:rounded-t-lg']}
                     src="https://static.renzs.top/articles/dbd1966cc0f2e108423c7b60d063b904.jpg"
                     alt=""
                     style={{ width: '100%', height: '100%' }}
@@ -309,7 +309,7 @@ export default defineComponent({
                 </div>:''
                }
                 <div
-                  class={['article-wrapper','max-lg:pl-5','max-lg:pr-5','max-lg:pt-5','max-lg:pb-7' ,'max-lg:w-full','xl:w-[55%]', 'xl:pl-10', 'lg:pr-10', 'flex', 'justify-center', 'flex-col']}
+                  class={['article-wrapper','max-lg:pl-5','max-lg:pr-5','max-lg:pt-5','max-lg:pb-7' ,'max-lg:w-full','lg:w-[55%]', 'xl:pl-10', 'lg:pr-10', 'flex', 'justify-center', 'flex-col']}
                 >
                   <div>
                     <span class={['lg:text-[22px]', 'font-bold']}>网站的更新日志</span>
@@ -364,7 +364,7 @@ export default defineComponent({
                   ]}
                 >
                   <div class={['text-sm', 'leading-[2]']}>🧡💛💚 公告</div>
-                  <p class={['text-sm', 'leading-[2]', 'font-bold']}>
+                  <p class={['text-sm', 'leading-[2]', 'font-bold','break-all']}>
                     网站的更新记录：https://www.renzs.top/articles/66
                   </p>
                 </div>
